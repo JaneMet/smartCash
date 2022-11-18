@@ -23,7 +23,11 @@ class Calculator:
         pass
 
     def get_week_stats(self):
-        pass
+        week_stats = []
+        for record in self.records:
+            if (self.week_ago <= record.date) and (self.week_ago <= self.today):
+                week_stats.append(record.amount)
+        return sum(week_stats)
 
     def get_today_limit_balance(self):
         t_limit_balance = self.limit - self.get_today_stats()
