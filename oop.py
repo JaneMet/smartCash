@@ -22,6 +22,7 @@ class Calculator:
     def get_today_stats(self):
         pass
 
+
     def get_week_stats(self):
         pass
 
