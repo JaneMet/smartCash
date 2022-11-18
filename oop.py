@@ -20,7 +20,7 @@ class Calculator:
         self.records.append(record)
 
     def get_today_stats(self):
-        pass
+        t_date=dt.date.today()
 
     def get_week_stats(self):
         week_stats = []
@@ -30,8 +30,9 @@ class Calculator:
         return sum(week_stats)
 
     def get_today_limit_balance(self):
-        t_limit_balance = self.limit - self.get_today_stats()
-        return t_limit_balance
+        # t_limit_balance = self.limit - self.get_today_stats()
+        # return t_limit_balance
+        pass
     
 
 class CaloriesCalculator(Calculator):
@@ -41,12 +42,22 @@ class CaloriesCalculator(Calculator):
 
 
 class CashCalculator(Calculator):
-    USD_RATE = 50.0
-    EURO_RATE = 50.0
+    USD_RATE = 60.39
+    EURO_RATE = 62.57
     RUB_RATE = 1
 
-    def get_today_cash_remained(self, currency):
-        pass
+    def get_today_cash_remained(self, money):
+
+        cash_remained = self.get_today_limit_balance()
+
+        com_bad = 'Денег нет, держись'
+
+        if cash_remained == 0:
+            return com_bad
+
+        money = {'usd': ('USD', CashCalculator.USD_RATE),
+                 'eur': ('Euro', CashCalculator.EURO_RATE),
+                 'rub': ('руб', CashCalculator.RUB_RATE)}
 
 
 # для CashCalculator
@@ -61,16 +72,12 @@ r6 = Record(amount=1140, comment='Баночка чипсов.', date='24.02.201
 
 # для CashCalculator
 cash_calculator = CashCalculator(1000)
-# дата в параметрах не указана,
-# так что по умолчанию к записи
-# должна автоматически добавиться сегодняшняя дата
+# дата в параметрах не указана, так что по умолчанию к записи должна автоматически добавиться сегодняшняя дата
 cash_calculator.add_record(Record(amount=145, comment='кофе'))
 # и к этой записи тоже дата должна добавиться автоматически
 cash_calculator.add_record(Record(amount=300, comment='Серёге за обед'))
 # а тут пользователь указал дату, сохраняем её
-cash_calculator.add_record(Record(amount=3000,
-                                  comment='бар в Танин др',
-                                  date='08.11.2019'))
+cash_calculator.add_record(Record(amount=3000,comment='бар в Танин др',date='08.11.2019'))
 
 print(cash_calculator.get_today_cash_remained('rub'))
 print('test help')
