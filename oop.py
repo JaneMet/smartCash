@@ -1,13 +1,15 @@
-import datetime as dt
-
+from datetime import date
 
 class Record:
 
-    def __init__(self, amount, comment):
+    def __init__(self, amount, comment, data = None):
         self.amount = amount
         self.comment = comment
 
-
+        if date is None:
+            self.date = date.today()
+        else:
+            self.date = date.datetime.datetime.now('%d.%m.%Y')
 class Calculator:
 
     def __init__(self, limit):
@@ -65,5 +67,5 @@ cash_calculator.add_record(Record(amount=3000,
                                   date='08.11.2019'))
 
 print(cash_calculator.get_today_cash_remained('rub'))
-
+print('test help')
 
