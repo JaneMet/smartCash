@@ -24,7 +24,7 @@ class Calculator:
 
     def get_today_limit_balance(self):
 
-
+fhdcgj
 class CaloriesCalculator(Calculator):
 
     def get_calories_remained(self):
