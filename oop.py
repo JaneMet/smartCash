@@ -1,22 +1,23 @@
-from datetime import date
+from datetime import datetime as dt
 
 class Record:
 
-    def __init__(self, amount, comment, data = None):
+    def __init__(self, amount, comment, date=None):
         self.amount = amount
         self.comment = comment
 
         if date is None:
-            self.date = date.today()
+            self.date = dt.today()
         else:
-            self.date = date.datetime.datetime.now('%d.%m.%Y')
+            self.date = dt.strptime(date,'%d.%m.%Y')
+
 class Calculator:
 
     def __init__(self, limit):
         pass
 
     def add_record(self, record):
-        self.records.append(record)
+        pass
 
     def get_today_stats(self):
         pass
@@ -44,14 +45,14 @@ class CashCalculator(Calculator):
 
 
 # для CashCalculator
-r1 = Record(amount=145, comment='Безудержный шопинг')
-r2 = Record(amount=1568, comment='Наполнение потребительской корзины')
-r3 = Record(amount=691, comment='Катание на такси')
+r1 = Record(amount=145, comment='Безудержный шопинг', date='08.03.2019')
+r2 = Record(amount=1568,comment='Наполнение потребительской корзины',date='09.03.2019')
+r3 = Record(amount=691, comment='Катание на такси', date='08.03.2019')
 
 # для CaloriesCalculator
-r4 = Record(amount=1186, comment='Кусок тортика. И ещё один.', )
-r5 = Record(amount=84, comment='Йогурт.')
-r6 = Record(amount=1140, comment='Баночка чипсов.')
+r4 = Record(amount=1186,comment='Кусок тортика. И ещё один.',date='24.02.2019')
+r5 = Record(amount=84, comment='Йогурт.', date='23.02.2019')
+r6 = Record(amount=1140, comment='Баночка чипсов.', date='24.02.2019')
 
 # для CashCalculator
 cash_calculator = CashCalculator(1000)
