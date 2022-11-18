@@ -12,22 +12,22 @@ class Record:
             self.date = dt.strptime(date,'%d.%m.%Y')
 
 class Calculator:
-
     def __init__(self, limit):
-        pass
+        self.limit = limit
+        self.records = []
 
     def add_record(self, record):
-        pass
+        self.records.append(record)
 
     def get_today_stats(self):
         pass
-
 
     def get_week_stats(self):
         pass
 
     def get_today_limit_balance(self):
-        pass
+        t_limit_balance = self.limit - self.get_today_stats()
+        return t_limit_balance
     
 
 class CaloriesCalculator(Calculator):
