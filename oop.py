@@ -11,24 +11,25 @@ class Record:
 class Calculator:
 
     def __init__(self, limit):
-
+        pass
 
     def add_record(self, record):
         self.records.append(record)
 
     def get_today_stats(self):
-
+        pass
 
     def get_week_stats(self):
-
+        pass
 
     def get_today_limit_balance(self):
+        pass
+    
 
-fhdcgj
 class CaloriesCalculator(Calculator):
 
     def get_calories_remained(self):
-
+        pass
 
 
 class CashCalculator(Calculator):
@@ -37,6 +38,7 @@ class CashCalculator(Calculator):
     RUB_RATE = 1
 
     def get_today_cash_remained(self, currency):
+        pass
 
 
 # для CashCalculator
