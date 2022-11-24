@@ -20,7 +20,8 @@ class Calculator:
         self.records.append(record)
 
     def get_today_stats(self):
-        t_date=dt.date.today()
+        """Взять все рекорды за сегодня и посчитать сколько полчилось"""
+        t_date = dt.date.today()
 
     def get_week_stats(self):
         week_stats = []
@@ -30,14 +31,14 @@ class Calculator:
         return sum(week_stats)
 
     def get_today_limit_balance(self):
-        # t_limit_balance = self.limit - self.get_today_stats()
-        # return t_limit_balance
+        """получить статистику за сегодня и сравнить с лимитом"""
         pass
-    
+
 
 class CaloriesCalculator(Calculator):
 
     def get_calories_remained(self):
+        """берем get_today_limit_balance и в зависимтоси от значения выводим комменатрий"""
         pass
 
 
@@ -47,6 +48,10 @@ class CashCalculator(Calculator):
     RUB_RATE = 1
 
     def get_today_cash_remained(self, money):
+        """берем get_today_limit_balance и в зависимтоси от значения выводим комменатрий"""
+
+
+        # self.limit = 2500
 
         cash_remained = self.get_today_limit_balance()
 
