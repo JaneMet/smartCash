@@ -10,7 +10,7 @@ class Record:
             self.date = dt.today()
         else:
             self.date = dt.strptime(date,'%d.%m.%Y')
-
+#fdb
 class Calculator:
     def __init__(self, limit):
         self.limit = limit
