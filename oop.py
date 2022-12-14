@@ -15,6 +15,7 @@ class Calculator:
     def __init__(self, limit):
         self.limit = limit
         self.records = []
+        self.today = dt.date.today()
 
     def add_record(self, record):
         self.records.append(record)
