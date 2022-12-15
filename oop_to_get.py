@@ -62,7 +62,7 @@ class CashCalculator(Calculator):
     RUB_RATE = 1
 
     def get_today_cash_remained(self, money='rub'):
-        """берем get_today_limit_balance и в зависимтоси от значения выводим комменатрий"""
+        """берем get_today_limit_balance и в зависимости от значения выводим комменатрий"""
         money_many = {'usd': ('USD', CashCalculator.USD_RATE),
                       'eur': ('Euro', CashCalculator.EURO_RATE),
                       'rub': ('руб', CashCalculator.RUB_RATE)}
