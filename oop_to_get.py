@@ -52,7 +52,7 @@ class CaloriesCalculator(Calculator):
             message = (f'Сегодня можно съесть что-нибудь ещё, но с общей '
                        f'калорийностью не более {calories_remained} кКал')
         else:
-            message = 'Хватит есть!'
+            message = f'Хватит есть!'
         return message
 
 
