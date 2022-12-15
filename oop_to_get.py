@@ -69,10 +69,10 @@ class CashCalculator(Calculator):
 
         cash_remained = self.get_today_limit_balance()
 
-        com_bad = 'Денег нет, держись'
-        com_better = 'Денег нет, держись: твой долг - N руб/USD/Euro {cash_remained}{money}'
+        com_bad = f'Денег нет, держись'
+        com_better = f'Денег нет, держись: твой долг {cash_remained} {money}'
         com_ost = f'Сегодня осталось {cash_remained} {money}'
-        com_not_in = 'Валюта {money} не рассматривается в программе'
+        com_not_in = f'Валюта {money} не рассматривается в программе'
 
         if cash_remained == 0:
             return com_bad
@@ -98,7 +98,7 @@ cash_calculator.add_record(Record(amount=300, comment='Серёге за обе�
 # а тут пользователь указал дату, сохраняем её
 cash_calculator.add_record(Record(amount=3000,
                                   comment='бар в Танин др',
-                                  date='08.11.2019'))
+                                  date='14.12.2022'))
 
 #print(f'1. week stst {cash_calculator.get_week_stats()}') 1. week stst 445
 print(f'2. {cash_calculator.get_today_cash_remained()}')
