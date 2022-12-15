@@ -88,17 +88,12 @@ class CashCalculator(Calculator):
             return com_better
 
 # создадим калькулятор денег с дневным лимитом 1000
-cash_calculator = CashCalculator(1000)
-
-
 # дата в параметрах не указана, так что по умолчанию к записи должна автоматически добавиться сегодняшняя дата
-cash_calculator.add_record(Record(amount=145, comment='кофе'))
-# и к этой записи тоже дата должна добавиться автоматически
-cash_calculator.add_record(Record(amount=300, comment='Серёге за обед'))
+cash_calculator = CashCalculator(1000)
+cash_calculator.add_record(Record(amount=145, comment='Безудержный шопинг'))
+cash_calculator.add_record(Record(amount=300, comment='Наполнение потребительской корзины'))
 # а тут пользователь указал дату, сохраняем её
-cash_calculator.add_record(Record(amount=3000,
-                                  comment='бар в Танин др',
-                                  date='14.12.2022'))
+cash_calculator.add_record(Record(amount=3000, comment='Катание на такси', date='08.03.2019'))
 
 #print(f'1. week stst {cash_calculator.get_week_stats()}') 1. week stst 445
 print(f'2. {cash_calculator.get_today_cash_remained()}')
